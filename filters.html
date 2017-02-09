@@ -1,0 +1,64 @@
+<!-- 
+	Filters:
+	========	
+
+		* Filters are not just limited to manipulating text O/P of Angular Expressions.
+
+		ngFilter
+
+		Built in Filters:
+		=================
+		orderBy
+		limitTo
+		uppercase
+		lowercase
+		currency
+		number
+		json
+
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Angular Filters</title>
+ </head>
+ <body>
+ 	
+ 	<div ng-controller="TestCtrl as test">
+ 			<input type="text" ng-model="search.name">
+ 			<p ng-repeat="text in test.people | filter:search">{{person.name}}</p>
+ 	</div>
+
+ 	<!-- orderBy -->
+ 	<p ng-repeat="person in test.people | orderBy:'name"></p>
+
+ 	<!-- limitTo -->
+ 	<p ng-repeat="person in test.people | limitTo:5"></p>
+
+ 	<!-- Chaining Filters -->
+ 	<p ng-repeat="person in test.people | filter:search | orderBy:'search'"></p>
+
+ 	<script type="text/javascript">
+ 		function TestCtrl(){
+ 			var self = this;
+ 			self.people = [
+ 			  {
+		        name: "Eric Simons",
+		        born: "Chicago"
+		      },
+		      {
+		        name: "Albert Pai",
+		        born: "Taiwan"
+		      },
+		      {
+		        name: "Matthew Greenster",
+		        born: "Virginia"
+		      }
+ 			];
+ 		}
+ 		var app = angular.module('app',[]);
+ 		app.controller('TestCtrl',TestCtrl);
+ 	</script>
+ </body>
+ </html>
