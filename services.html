@@ -1,0 +1,59 @@
+<!-- 
+	Services:
+	=========
+
+	Better way to share data and functionality between controllers
+	Singletons
+
+	Dependency Injection:
+	=====================
+
+	Giving an object to a function
+	Rather than creating an object inside a function, we pass it to a function
+ -->
+
+ <!DOCTYPE html>
+ <html ng-app="app">
+ <head>
+ 	<title>AngularJS Services</title>
+ </head>
+ <body>
+ 	<div ng-controller="ListCtrl as list">
+ 		<p ng-repeat="message in messages.list">{{message.id}}: {{message.text}}</p>
+ 	</div>
+ 	<div ng-controller="PostCtrl as post">
+ 		<form ng-submit="post.addMessage(post.newMessage)">
+ 			<input type="text" ng-model="post.newMessage"/>
+ 			<button type="Submit">Add Message</button>
+ 		</form>
+ 	</div>
+ 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ 	<script type="text/javascript">
+ 		var app = angular.module('app',[]);
+ 		app.factory('messages', ['$scope', function($scope){
+ 			return function name(){
+ 				var messages = {};
+ 				messages.list = [];
+ 				messages.add = function(message){
+ 					messages.list.push({id:messages.list.length, text:message});
+ 				};
+ 				return messages;	
+ 			};
+ 		}]);
+
+ 		app.controller('ListCtrl', ['$scope','messages', function($scope,messages){
+ 				var self = this;
+ 				self.messages = messages.list;	
+ 		}]);
+
+ 		app.controller('PostCtrl', ['$scope', function($scope){
+ 			var self = this;
+ 			self.newMessage = 'Hello world!';
+ 			self.addMessage = function(message){
+ 				messages.add(message);
+ 				self.newMessage = '';
+ 			}
+ 		}]);	
+ 	</script>
+ </body>
+ </html>
