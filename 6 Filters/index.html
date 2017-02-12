@@ -1,0 +1,56 @@
+<!-- Filters in AngularJS -->
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Filter Example</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="TestCtrl as test">
+		<input type="text" name="" ng-model="test.search.name">
+		<p ng-repeat="friend in test.friends | filter: test.search.name">{{friend.name}}</p>
+
+		<!-- orderBy -->
+		<br>
+		<input type="text" name="" ng-model="test.find.name">
+		<p ng-repeat="friend in test.friends | orderBy:'-name'">{{friend.name}}</p> 
+
+		<!-- limitTo -->
+		<br>
+		<p ng-repeat="friend in test.friends | limitTo:-5">{{friend.name}}</p>
+
+		<!-- Chaining filters -->
+		<input type="text" name="" ng-model="test.get.name">
+		<p ng-repeat="friend in test.friends | filter:test.search | orderBy:'name'| limitTo:-5">{{friend.name}}</p>
+	</div>
+	<hr>
+	<h3>Filter 1: Static (single) use filter</h3>
+	<div ng-controller="PersonCtrl as person">
+		<p>{{person.username | makeUpperCase}}</p>
+	</div>
+	<hr>
+	<h3>Filter 2: Filters for repeats</h3>
+	<div ng-controller="RepeatCtrl as repeats">
+		<ul>
+			<li ng-repeat="friend in repeats.friends | startsWithA">{{friend.name}}</li>
+		</ul>
+	</div>
+	<hr>
+	<h3>Filter 3: Filters for repeats with arguments</h3>
+	<!-- <div ng-controller="ArgCtrl as arg">
+		<input type="text" name="" ng-model="arg.letter">
+		<ul>
+			<li ng-repeat="friend  in arg.friends | startsWithLetter:arg.letter">{{friend.name}}</li>
+		</ul>
+	</div> -->
+	<hr>
+	<h3>Filter 4: Controller/$scope filter</h3>
+	<div ng-controller="CheatCtrl as cheat">
+		<ul>
+			<li ng-repeat="friend in cheat.friends | filter:cheat.startsWithW">{{friend.name}}</li>
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Components and Containers</title>
+</head>
+<body>
+	<clock timezone="MST"></clock>
+	<panel title="I'm a title">
+		<clock timezone="PST"></clock>
+	</panel>
+	<panel title="I'm a title">
+	    <clock timezone="DST"></clock>
+	    <clock timezone="CST"></clock>
+	    <clock timezone="AST"></clock>
+	    <clock timezone="IST"></clock>
+  	</panel>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

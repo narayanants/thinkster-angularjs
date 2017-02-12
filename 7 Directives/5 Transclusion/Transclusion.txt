@@ -1,0 +1,13 @@
+Transclusion:
+============
+
+	Template content in the view is appended to the content in the directive while using transclusion
+
+	Transclusion should be used only on element directives, which should always specify a template and an isolated scope.
+
+	<welcome>
+		This is the content
+		<ng-transclude>
+			
+		</ng-transclude>
+	</welcome>

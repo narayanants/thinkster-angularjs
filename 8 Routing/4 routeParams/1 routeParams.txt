@@ -1,0 +1,6 @@
+routeParams:
+============
+
+	$routeProvider matches routes based on /:message and the value of it is injected into controller using $routeParams
+
+	

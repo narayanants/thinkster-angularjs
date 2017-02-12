@@ -1,0 +1,9 @@
+config function:
+================
+
+config phase has only providers.
+
+providers are factories that generate a new instance of things like $route.
+
+
+we cannot define routes in a controller or services because config needs to happen before it gets injected into anything we want to use it in.

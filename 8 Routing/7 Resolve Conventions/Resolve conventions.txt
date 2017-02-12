@@ -1,0 +1,8 @@
+Resolve Conventions:
+=================
+
+	Most of the time resolve is associated with a controller.
+
+	This allows promises to be decoupled from the router and declared separately, but still remain linked to its parent controller.
+
+	

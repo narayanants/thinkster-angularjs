@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Understanding Isolate Scope</title>
+</head>
+<body>
+	<div ng-app="ChoreCtrl as chores">
+		<kid done="chores.logChore(chore)"></kid>
+		<kid done="chores.logChore(chore)"></kid>
+		<kid done="chores.logChore(chore)"></kid>
+		<kid done="chores.logChore(chore)"></kid>
+	</div>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

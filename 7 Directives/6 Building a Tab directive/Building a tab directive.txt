@@ -1,0 +1,26 @@
+Building a tab directive:
+========================
+
+	* A directive is a way of defining custom HTML elements that use JS to create custom behaviours.
+
+	* 2 types:
+
+		elements
+		attributes(decorators)
+
+	* Elements contain their own custom templates and have their own HTML elements.
+	* attributes are used on existing HTML elements to add new behaviours such as onclick functionality.
+	* 
+	The Anatomy of a Directive:
+
+
+	Directive are declared using the .directvie()
+	First param is the name of the directive specified in camelCase
+	Second param is a function that returns a Directive definition object.
+
+	Properites of DDO specify various config options for the directive.
+
+	Transclude means to include one document inside another.
+
+	bindToController = any values passed into the directives scope is automatically accessible inside the directives controller using this.
+

@@ -1,0 +1,13 @@
+redirectTo:
+===========
+
+
+	used to redirectTo to a 404 page if $routeProvider doesn't find a matching route.
+
+	routeParams is same as $routeParams
+
+	path is the string path the router receives.
+
+	search is a key/value set of the query parameters.
+
+	

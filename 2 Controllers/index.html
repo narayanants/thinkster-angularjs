@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>AngularJS Controllers</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+      <h1>Controllers</h1>
+      <div ng-controller="MainCtrl as main">
+          <p>{{main.message}}</p>
+		  <form ng-submit="main.updateMessage(main.newMessage)">
+		  	<input type="text" name="name" ng-model="main.newMessage">
+		  	<button type="submit">Update Message</button>
+		  </form>
+      </div>
+  </body>
+</html>

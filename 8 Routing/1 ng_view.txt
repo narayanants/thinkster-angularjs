@@ -1,0 +1,9 @@
+ng-view:
+=======
+
+ng-view is used as a container to switch between views.
+
+ng-view allows us to setup the config function and access the $routeProvider.
+
+Services are not available to us so we have to access the router using $routeProvider and not $route
+

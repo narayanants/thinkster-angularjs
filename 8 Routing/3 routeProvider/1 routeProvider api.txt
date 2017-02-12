@@ -1,0 +1,14 @@
+routeProvider API:
+=================
+
+has a sime API pattern that accepts 
+
+	.when() method which makes a pattern
+
+	or 
+
+	otherwise() - 
+
+	It also allows method chaining.
+
+	

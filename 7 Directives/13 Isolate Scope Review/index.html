@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Isolated scope review</title>
+</head>
+<body>
+	<div ng-controller="FunCtrl as fun">
+		<phone number="555-1234" network="fun.network" make-call="fun.leaveVoiceMail(number,message)"></phone>
+		<phone number="988-0992" network="fun.network" make-call="fun.leaveVoiceMail(number,message)"></phone>
+		<phone number="911" network="fun.network" make-call="fun.leaveVoiceMail(number,message)"></phone>
+	</div>
+
+	<div>
+		<h2>Number:{{number}}</h2>
+		<br>
+		<h2>Network:<select ng-model="network" ng-options="net for net in networks"></select></h2>
+	</div>
+	<br>
+	<br>
+	<input type="text" name="" ng-model="value">
+	<div class="btn" ng-click="makeCall({message:value,number:number})">
+		Call home!
+	</div>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

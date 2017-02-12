@@ -1,0 +1,7 @@
+Components and containers:
+==========================
+
+	Directives are divided into 2 categories:
+
+		Components - clock example is a Component
+		containers
